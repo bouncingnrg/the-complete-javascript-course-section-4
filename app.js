@@ -8,3 +8,32 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+
+var scores, roundScores, activePlayer, dice; 
+
+scores = [0,0];
+roundScore = 0;
+activePlayer = 1;
+
+dice = Math.floor(Math.random() *6) +1;
+
+document.querySelector('#current-' + activePlayer).textContent = dice;
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</eb>';
+
+/* 
+// This is how you can use querySelector to store info from a webpage as a varibale.
+
+var x = document.querySelector('#score-0').textContent;
+console.log(x);
+
+*/
+
+document.querySelector('.dice').style.display = 'none'; // changing the dice NOT to display when the webpage opens. Using the style.display you can change the display properties. Style = css method , Display = css property , '' = css value.
+
+
+
+
+
+
+
+
