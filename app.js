@@ -9,15 +9,18 @@ GAME RULES:
 
 */
 
-var scores, roundScores, activePlayer, dice; 
+var scores, roundScores, activePlayer;
 
 scores = [0,0];
 roundScore = 0;
 activePlayer = 1;
 
-dice = Math.floor(Math.random() *6) +1;
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
 
-document.querySelector('#current-' + activePlayer).textContent = dice;
+//document.querySelector('#current-' + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</eb>';
 
 /* 
@@ -29,6 +32,51 @@ console.log(x);
 */
 
 document.querySelector('.dice').style.display = 'none'; // changing the dice NOT to display when the webpage opens. Using the style.display you can change the display properties. Style = css method , Display = css property , '' = css value.
+
+/*
+Function btn() {
+    // do something here
+}
+/*
+document.querySelector('.btn-roll').addEventListener('click', btn); // addEventListeneer, 1st argument is the name of the event i.e click, the 2nd is the name of the function. Do not use the parentesis like normal when calling a function. As this is beoing called in the listeneer its called a 'CALL BACK' - a call back is a function we pass into another function as an ARGUMENT.
+
+/*
+// an anomonymous function
+is inside another function but can only be used in that function, ie it can not be call somewhere else & doesn't have a name, it would look like this
+*/
+
+document.querySelector('.btn-roll').addEventListener('click', function(){
+    
+    // 1. Random Number
+    var dice = Math.floor(Math.random() *6) +1;
+    
+    // 2. Display the result.
+    var diceDOM = document.querySelector('.dice')
+    diceDOM.style.display = 'block';
+    diceDOM.src = 'dice-' + dice + '.png';
+    
+    // 3. Update the round score IF the rolled number was NOT 1.
+    
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
