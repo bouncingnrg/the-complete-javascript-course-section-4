@@ -13,12 +13,12 @@ var scores, roundScores, activePlayer, gamePlaying;
 
 init();
 
-
 document.querySelector('.btn-roll').addEventListener('click', function() {
     if(gamePlaying) {
+            
         // 1. Random Number
-        var dice = Math.floor(Math.random() *6) +1;
-
+        var dice = Math.floor(Math.random() * 6) + 1;
+        
         // 2. Display the result.
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
@@ -34,6 +34,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
             // next player
             nextPlayer(); // see next player function
          }
+    
     }
 });
 
@@ -54,7 +55,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         document.querySelector('.dice').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-        gamePlaying = false;
+        
     } else {
     nextPlayer();    
     } 
